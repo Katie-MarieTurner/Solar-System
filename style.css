@@ -1,0 +1,232 @@
+/*! ~~~~~~~~~~~~~~~~~~~~~~~~~~[Element CSS]~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+html {
+    overflow: hidden;
+    background-color: #0e0c32;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+main {
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    min-width: 100%;
+    margin: 0;
+    overflow: clip;
+    position: relative;
+}
+section{
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+    border-radius: 25px;
+    position: absolute;
+    height: 70%;
+    width: 80%;
+    background-color: #5e5f94;
+}
+
+/*! ~~~~~~~~~~~~~~~~~~~~~~~~~~[Id CSS]~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~[Menu Button]~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+#menu{
+    font-size: 40px;
+    border-style: hidden;
+    color: #f0f8ff;
+    background-color: #5e5f94;
+    border-radius: 25px;
+    height: 200px;
+    width: 70px;
+}
+#menu:active{
+box-shadow: 0 5px #2b2c63;
+transform: translateY(4px);
+}
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~[Options Menu]~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+#options.optionshidden{
+    display: none;
+}
+#options.optionsshown{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 0;
+    border-radius: 25px;
+    position: absolute;
+    height: 65%;
+    width: 80%;
+    background-color: #2b2c63;
+}
+
+#Btn1.Btn1Info, #Btn2.Btn2Info, #Btn3.Btn3Info{
+    font-size: 20px;
+    border-style: hidden;
+    color: #f0f8ff;
+    background-color: #3f4470;
+    border-radius: 25px;
+    height: 200px;
+    width: auto;
+    margin: 5px;
+}
+
+/*! ~~~~~~~~~~~~~~~~~~~~~~~~~~[Class CSS]~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~[Options Menu]~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+.Btn{
+    font-size: 35px;
+    border-style: hidden;
+    color: #f0f8ff;
+    background-color: #3f4470;
+    border-radius: 25px;
+    height: 200px;
+    width: auto;
+    margin: 5px;
+}
+
+/*! ~~~~~~~~~~~~~~~~~~~~~~~~~~[Orbit Animation Setup]~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+@property --angle {
+    syntax: '<angle>';
+    inherits: true;
+    initial-value: 0deg;
+}
+@keyframes revolve {
+    from { --angle: 0deg; }
+    to { --angle: 360deg; }
+}
+
+/*! ~~~~~~~~~~~~~~~~~~~~~~~~~~[Size And Colour Of Models]~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+.sun{
+    background: #f0a435;
+    border-radius: 50%;
+    width: 696px;
+    height: 696px;
+}
+.mercury{
+    position: absolute;
+        background: #cfb797;
+        border-radius: 50%;
+        width: 2px;
+        height: 2px;
+}
+.venus{
+    position: absolute;
+    background: #cec1a5;
+    border-radius: 50%;
+    width: 6px;
+    height: 6px;
+}
+.earth{
+    position: absolute;
+    background: #69718c;
+    border-radius: 50%;
+    width: 6px;
+    height: 6px;
+}
+.mars{
+    position: absolute;
+    background: #a8654a;
+    border-radius: 50%;
+    width: 3px;
+    height: 3px;
+}
+.jupiter{
+    position: absolute;
+    background: #c1a979;
+    border-radius: 50%;
+    width: 69px;
+    height: 69px;
+}
+.saturn{
+    position: absolute;
+    background: #c7b171;
+    border-radius: 50%;
+    width: 58px;
+    height: 58px;
+}
+.uranus{
+    position: absolute;
+    background: #c0e5e8;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+}
+.neptune{
+    position: absolute;
+    background: #4e81ed;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+}
+
+/*! ~~~~~~~~~~~~~~~~~~~~~~~~~~[Speed And Radius Of Orbit]~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+.mercury {
+    box-sizing: border-box;
+    --amplitude: 400px;
+    --x: calc(cos(var(--angle)) * var(--amplitude));
+    --y: calc(sin(var(--angle)) * var(--amplitude));
+    translate: var(--x) var(--y);
+    animation: revolve 8s linear infinite;
+}
+.venus {
+    box-sizing: border-box;
+    --amplitude: 450px;
+    --x: calc(cos(var(--angle)) * var(--amplitude));
+    --y: calc(sin(var(--angle)) * var(--amplitude));
+    translate: var(--x) var(--y);
+    animation: revolve 22s linear infinite;
+}
+.earth {
+    box-sizing: border-box;
+    --amplitude: 500px;
+    --x: calc(cos(var(--angle)) * var(--amplitude));
+    --y: calc(sin(var(--angle)) * var(--amplitude));
+    translate: var(--x) var(--y);
+    animation: revolve 36s linear infinite;
+}
+.mars {
+    box-sizing: border-box;
+    --amplitude: 550px;
+    --x: calc(cos(var(--angle)) * var(--amplitude));
+    --y: calc(sin(var(--angle)) * var(--amplitude));
+    translate: var(--x) var(--y);
+    animation: revolve 68s linear infinite;
+}
+.jupiter {
+    box-sizing: border-box;
+    --amplitude: 650px;
+    --x: calc(cos(var(--angle)) * var(--amplitude));
+    --y: calc(sin(var(--angle)) * var(--amplitude));
+    translate: var(--x) var(--y);
+    animation: revolve 433s linear infinite;
+}
+.saturn {
+    box-sizing: border-box;
+    --amplitude: 750px;
+    --x: calc(cos(var(--angle)) * var(--amplitude));
+    --y: calc(sin(var(--angle)) * var(--amplitude));
+    translate: var(--x) var(--y);
+    animation: revolve 1075s linear infinite;
+}
+.uranus {
+    box-sizing: border-box;
+    --amplitude: 800px;
+    --x: calc(cos(var(--angle)) * var(--amplitude));
+    --y: calc(sin(var(--angle)) * var(--amplitude));
+    translate: var(--x) var(--y);
+    animation: revolve 3068s linear infinite;
+}
+.neptune {
+    box-sizing: border-box;
+    --amplitude: 850px;
+    --x: calc(cos(var(--angle)) * var(--amplitude));
+    --y: calc(sin(var(--angle)) * var(--amplitude));
+    translate: var(--x) var(--y);
+    animation: revolve 6019s linear infinite;
+}
